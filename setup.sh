@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles=(".zshrc" ".p10k.zsh" ".cargo/config.toml" ".config/rsgain/presets/SBS.ini")
+dotfiles=(".zshrc" ".p10k.zsh" ".cargo/config.toml" ".config/rsgain/presets/SBS.ini" ".gitconfig")
 
 mkdir -pv ~/.cargo
 mkdir -pv ~/.config/rsgain/presets
