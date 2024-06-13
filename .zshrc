@@ -7,7 +7,7 @@ fi
 
 #################################  HISTORY  #################################
 # history
-HISTFILE=$HOME/.zsh-history # 履歴を保存するファイル
+HISTFILE=$HOME/.zsh_history # 履歴を保存するファイル
 HISTSIZE=100000             # メモリ上に保存する履歴のサイズ
 SAVEHIST=1000000            # 上述のファイルに保存する履歴のサイズ
 
@@ -48,6 +48,10 @@ zstyle ':completion:*:default' menu select=2
 ## coloring
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+## for docker
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
   print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
@@ -68,5 +72,11 @@ zinit light zdharma/fast-syntax-highlighting
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
+zi snippet OMZP::python
+zi snippet OMZP::command-not-found
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias exp="/mnt/c/Windows/explorer.exe"
+alias clip="/mnt/c/Windows/system32/clip.exe"
