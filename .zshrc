@@ -80,3 +80,4 @@ zi snippet OMZP::command-not-found
 
 alias exp="/mnt/c/Windows/explorer.exe"
 alias clip="/mnt/c/Windows/system32/clip.exe"
+alias code="/mnt/c/Users/keinsleif/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
