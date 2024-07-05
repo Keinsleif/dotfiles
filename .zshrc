@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
+
 #################################  HISTORY  #################################
 # history
 HISTFILE=$HOME/.zsh_history # 履歴を保存するファイル
@@ -62,3 +64,5 @@ eval "$(sheldon source)"
 alias exp="/mnt/c/Windows/explorer.exe"
 alias clip="/mnt/c/Windows/system32/clip.exe"
 alias code="/mnt/c/Users/keinsleif/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+
+alias py="python3"
