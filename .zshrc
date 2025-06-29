@@ -70,3 +70,6 @@ alias code="/mnt/c/Users/keinsleif/AppData/Local/Programs/Microsoft\ VS\ Code/bi
 alias py="python3"
 
 alias yt-a="yt-dlp -f bestaudio -x"
+alias startw="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
+
+. "$HOME/.local/bin/env"
