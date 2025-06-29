@@ -1,3 +1,5 @@
 [user]
 	email = mountaindull@gmail.com
 	name = Keinsleif
+[init]
+	defaultBranch = master
