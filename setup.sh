@@ -24,3 +24,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
 NVM_DIR=/root/.nvm
 source $NVM_DIR/nvm.sh && nvm install --lts
+
+# setup pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
