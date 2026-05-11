@@ -61,23 +61,17 @@ eval "$(sheldon source)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias exp="/mnt/c/Windows/explorer.exe"
-alias clip="/mnt/c/Windows/system32/clip.exe"
-alias code="/mnt/c/Users/keinsleif/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+if [[ "$(uname -r)" = *-microsoft-* ]]; then
+    alias exp="/mnt/c/Windows/explorer.exe"
+    alias clip="/mnt/c/Windows/system32/clip.exe"
+    alias code="/mnt/c/Users/keinsleif/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+fi
 
 alias py="python3"
 
 alias yt-a="yt-dlp -f bestaudio -x"
 alias startw="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$PATH:$HOME/.local/bin"
 
-# pnpm
-export PNPM_HOME="/home/keinsleif/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+eval "$(/home/keinsleif/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
