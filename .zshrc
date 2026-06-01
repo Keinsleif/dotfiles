@@ -54,9 +54,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
-
 eval "$(sheldon source)"
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -74,4 +72,16 @@ alias startw="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wa
 
 export PATH="$PATH:$HOME/.local/bin"
 
-eval "$(/home/keinsleif/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
+# pnpm
+export PNPM_HOME="/home/keinsleif/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
+source ~/.zsh_profile
+
+eval "$($HOME/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
